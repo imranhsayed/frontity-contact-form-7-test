@@ -6,6 +6,7 @@ import Post from "./post";
 import Page404 from "./page404.js";
 import Loading from "./loading";
 import Title from "./title";
+import ContactUs from "./contact-us";
 
 const globalStyles = css`
   body {
@@ -22,6 +23,25 @@ const globalStyles = css`
 
 const Theme = ({ state }) => {
   const data = state.source.get(state.router.link);
+  const pageSlug = state.router.link;
+
+	/**
+	 * If its contact us display the contact us page, else 404 if page not found.
+	 */
+	const renderPageDynamically = () => {
+
+  	if( data.is404 ) {
+
+	    if ( '/contact-us/' === pageSlug ) {
+		    return <ContactUs/>
+	    } else {
+	    	return <Page404 />
+	    }
+    }
+
+  };
+
+  console.warn( pageSlug );
 
   return (
     <>
@@ -38,7 +58,7 @@ const Theme = ({ state }) => {
         {data.isFetching && <Loading />}
         {data.isArchive && <List />}
         {data.isPostType && <Post />}
-        {data.is404 && <Page404 />}
+	      { renderPageDynamically() }
       </Body>
     </>
   );

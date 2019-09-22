@@ -13,26 +13,30 @@ const settings = {
       "state": {
         "theme": {
           "menu": [
-            [
-              "Home",
-              "/"
-            ],
-            [
-              "Nature",
-              "/category/nature/"
-            ],
-            [
-              "Travel",
-              "/category/travel/"
-            ],
-            [
-              "Japan",
-              "/tag/japan/"
-            ],
-            [
-              "About Us",
-              "/about-us/"
-            ]
+	          [
+		          "Home",
+		          "/"
+	          ],
+	          [
+		          "Nature",
+		          "/category/nature/"
+	          ],
+	          [
+		          "Travel",
+		          "/category/travel/"
+	          ],
+	          [
+		          "Japan",
+		          "/tag/japan/"
+	          ],
+	          [
+		          "About Us",
+		          "/about-us/"
+	          ],
+	          [
+		          "Contact Us",
+		          "/contact-us/"
+	          ]
           ],
           "featured": {
             "showOnList": false,
