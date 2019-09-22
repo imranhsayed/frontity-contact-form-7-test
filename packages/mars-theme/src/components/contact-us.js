@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from "frontity";
 import axios from 'axios';
+import { useState } from 'react';
 
 const ContactUs = () => {
 	if( process.browser ) {
@@ -10,10 +11,32 @@ const ContactUs = () => {
 				console.warn( persons.length );
 			})
 	}
+	
+	
 	return (
 		<Container>
 			<Title>Contact Us</Title>
-
+			<Form>
+				<Label>
+					Your Name:
+					<Input/>
+				</Label>
+				<Label>
+					Your Email:
+					<Input/>
+				</Label>
+				<Label>
+					Subject
+					<Input/>
+				</Label>
+				<Label>
+					Your Message
+					<TextArea/>
+				</Label>
+				<SubmitButton
+					type="submit"
+				>Send</SubmitButton>
+			</Form>
 		</Container>
 	);
 };
@@ -35,8 +58,8 @@ const Title = styled.h1`
   font-size: 4em;
 `;
 
-const Description = styled.div`
-  line-height: 1.6em;
-  color: rgba(12, 17, 43, 0.8);
-  margin: 24px 0;
-`;
+const Form = styled.form``;
+const Label = styled.label``;
+const Input = styled.input``;
+const TextArea = styled.textarea``;
+const SubmitButton = styled.button``;
