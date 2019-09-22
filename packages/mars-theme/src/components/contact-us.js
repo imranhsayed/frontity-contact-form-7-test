@@ -1,13 +1,22 @@
 import React from "react";
 import { styled } from "frontity";
+import axios from 'axios';
 
-const ContactUs = () => (
-	<Container>
-		<Title>Contact Us</Title>
+const ContactUs = () => {
+	if( process.browser ) {
+		axios.get(`https://jsonplaceholder.typicode.com/users`)
+			.then(res => {
+				const persons = res.data;
+				console.warn( persons.length );
+			})
+	}
+	return (
+		<Container>
+			<Title>Contact Us</Title>
 
-		</Description>
-	</Container>
-);
+		</Container>
+	);
+};
 
 export default ContactUs;
 
