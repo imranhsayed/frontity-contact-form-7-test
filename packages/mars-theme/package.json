@@ -1,0 +1,29 @@
+{
+  "name": "@frontity/mars-theme",
+  "version": "1.2.0",
+  "description": "A starter theme for Frontity",
+  "keywords": [
+    "frontity",
+    "frontity-theme",
+    "frontity-amp"
+  ],
+  "homepage": "https://frontity.org",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frontity/frontity.git"
+  },
+  "bugs": {
+    "url": "https://community.frontity.org"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@frontity/components": "^1.1.11",
+    "@frontity/html2react": "^1.1.11",
+    "frontity": "^1.3.1",
+    "react-spinners": "^0.5.4"
+  },
+  "gitHead": "f9ef0dfa9501279d02da6f6da7a3a5f5849c4b7b"
+}
