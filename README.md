@@ -2,6 +2,13 @@
 
 :fire: Contact Form 7 feature for Frontity theme.
 
+# Demo :video_camera:
+
+# Requirement
+
+* You need to install and set up the [contact-form-7-endpoints](https://github.com/imranhsayed/contact-form-7-endpoints) WordPress plugin
+* Please follow the WordPress plugin readme.
+
 # Installation :wrench:
 
 ### 1. For new project: by cloning this project.
