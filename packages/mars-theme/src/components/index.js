@@ -41,8 +41,6 @@ const Theme = ({ state }) => {
 
   };
 
-  console.warn( pageSlug );
-
   return (
     <>
       <Head>

@@ -4,34 +4,58 @@ import axios from 'axios';
 import { useState } from 'react';
 
 const ContactUs = () => {
+
+	const [ name, setName ] = useState( '' );
+	const [ email, setEmail ] = useState( '' );
+	const [ subject, setSubject ] = useState( '' );
+	const [ message, setMessage ] = useState( '' );
+
 	if( process.browser ) {
 		axios.get(`https://jsonplaceholder.typicode.com/users`)
 			.then(res => {
 				const persons = res.data;
-				console.warn( persons.length );
 			})
 	}
-	
-	
+
+	const handleFormSubmit = ( event ) => {
+		event.preventDefault();
+
+		const formData = { name, email, message, subject };
+		console.warn( formData );
+	};
+
+
 	return (
 		<Container>
-			<Title>Contact Us</Title>
-			<Form>
+			<Title>Contact Form</Title>
+			<Form onSubmit={ handleFormSubmit }>
 				<Label>
 					Your Name:
-					<Input/>
+					<Input
+						value={ name }
+						onChange={ ( event ) => setName( event.target.value ) }
+					/>
 				</Label>
 				<Label>
 					Your Email:
-					<Input/>
+					<Input
+						value={ email }
+						onChange={ ( event ) => setEmail( event.target.value ) }
+					/>
 				</Label>
 				<Label>
 					Subject
-					<Input/>
+					<Input
+						value={ subject }
+						onChange={ ( event ) => setSubject( event.target.value ) }
+					/>
 				</Label>
 				<Label>
 					Your Message
-					<TextArea/>
+					<TextArea
+						value={ message }
+						onChange={ ( event ) => setMessage( event.target.value ) }
+					/>
 				</Label>
 				<SubmitButton
 					type="submit"
